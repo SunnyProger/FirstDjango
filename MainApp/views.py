@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render
 
 author = {
@@ -34,7 +34,8 @@ def info(request):
             <p>Отчество: <strong>{author["middle_name"]}</strong><p>
             <p>Фамилия: <strong>{author["surname"]}</strong><p>
             <p>Телефон: <strong>{author["phone"]}</strong><p>
-            <p>email: <strong>{author["mail"]}</strong><p>"""
+            <p>email: <strong>{author["mail"]}</strong><p>
+            <a href='/'>Home</a>"""
     return HttpResponse(text)
 
 def item_info(request, id):
@@ -46,7 +47,7 @@ def item_info(request, id):
                 "item": item
             }
             return render(request, "item.html", context)
-    return HttpResponse(f"Товар с {id=} не найден")
+    return HttpResponseNotFound(f"Товар с {id=} не найден")
 
 def get_items(request):
     # text = '<h2>Список товаров</h2><ol>'

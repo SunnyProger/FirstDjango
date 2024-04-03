@@ -5,6 +5,15 @@
     <title>Информация о товаре</title>
 </head>
 <body>
-    <b>{{item.name}}</b>  в количестве {{item.quantity}}
+    <b>{{item.name}}</b> 
+    <!-- {% if item.quantity %}
+        в количестве {{item.quantity}} 
+    {% else %}
+        - товар отсутствует
+    {% endif %} -->
+    <br><br>
+    <div>Количество: {{ item.quantity| default:"Товар отсутствует"}}</div>
+    <br>
+    <a href="/items">Назад</a>
 </body>
 </html>
