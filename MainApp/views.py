@@ -40,8 +40,12 @@ def info(request):
 def item_info(request, id):
     for item in items:
         if item['id'] == id:
-            text = f"<b>{item['name']}</b> в количестве {item['quantity']} шт"
-            return HttpResponse(text)
+    #         text = f"<b>{item['name']}</b> в количестве {item['quantity']} шт"
+    #         return HttpResponse(text)
+            context = {
+                "item": item
+            }
+            return render(request, "item.html", context)
     return HttpResponse(f"Товар с {id=} не найден")
 
 def get_items(request):
