@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Информация о товаре</title>
-</head>
-<body>
-    <header>
-        / <a href="/">Home</a> / <a href="/items">Items</a> / <a href="/about">About</a>
-    </header><br>
+{% extends 'base.html' %}
+{% block content %}
     <b>{{item.name}}</b> 
-    <!-- {% if item.quantity %}
-        в количестве {{item.quantity}} 
-    {% else %}
-        - товар отсутствует
-    {% endif %} -->
+    <b>{{item.brand}}</b> 
     <br><br>
     <div>Количество: {{ item.count| default:"Товар отсутствует"}}</div>
     <br>
-    <a href="/items">Назад</a>
-</body>
-</html>
+    <a href="{% url 'items-list' %}">Назад</a>
+{% endblock %}

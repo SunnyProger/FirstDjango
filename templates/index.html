@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main page</title>
-</head>
-<body>
-    <header>
-        / <a href="/">Home</a> / <a href="/items">Items</a> / <a href="/about">About</a>
-    </header>
-    <h1>Приветствую</h1>
+{% extends 'base.html' %}
 
-    <!-- Это главная страница сайта <br>
-    <i>Эта страница пока в разработке...</i> -->
+{% block content %}
+<!-- {% include 'inc-menu.html' %} -->
+    <h1 class="demo">Приветствую</h1>
 
-    Меня зовут: <i>{{name}}.</i> <br>
+    <span style="color: blue">Меня зовут: {{name}}.</span> <br>
     Мой email для связи: <i>{{email}}.</i> <br><br>
 
-    <a href="/items">Список товаров</a>
-</body>
-</html>
+{% endblock %}
