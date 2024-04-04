@@ -5,6 +5,9 @@
     <title>Информация о товаре</title>
 </head>
 <body>
+    <header>
+        / <a href="/">Home</a> / <a href="/items">Items</a> / <a href="/about">About</a>
+    </header><br>
     <b>{{item.name}}</b> 
     <!-- {% if item.quantity %}
         в количестве {{item.quantity}} 
@@ -12,7 +15,7 @@
         - товар отсутствует
     {% endif %} -->
     <br><br>
-    <div>Количество: {{ item.quantity| default:"Товар отсутствует"}}</div>
+    <div>Количество: {{ item.count| default:"Товар отсутствует"}}</div>
     <br>
     <a href="/items">Назад</a>
 </body>
